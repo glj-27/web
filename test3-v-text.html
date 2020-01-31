@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-text</title>
+	</head>
+	<body>
+		<div id="app">
+			<h2 v-text="message+'啦啦'">哟吼</h2>         <!-- 用于解析成html文档 -->
+			<h2 v-text="info+'啦啦'">哟吼</h2>
+			<h2>{{ message+'啦啦' }}哟吼</h2>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:"你好!!!",
+					info:"晴天！"
+				}
+			})
+		</script>
+	</body>
+</html>

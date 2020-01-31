@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-bind</title>
+		<style>
+			.active{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"> 
+			<img v-bind:src="imgSrc" alt="">  <!-- 完整写法 -->
+			<br>
+			<img :src="imgSrc" alt="" :title="imgTitle" 
+			:class="isActive?'active':''" @click="toggleActive">
+			<br>
+			<img :src="imgSrc" alt="" :title="imgTitle" 
+			:class="{active:isActive}" @click="toggleActive">
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					imgSrc:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1376613349,311082947&fm=26&gp=0.jpg",
+					imgTitle:"雷纳斯",
+					isActive:false
+				},
+				methods:{
+					toggleActive:function(){
+						this.isActive = !this.isActive;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

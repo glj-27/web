@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片切换</title>
+		<link rel="stylesheet" type="text/css" href="./test10.css">
+	</head>
+	<body>
+		<div class="main">
+				<div>
+					<h2 class="title">图片切换</h2>
+				</div>
+				<div id="app" class="box">
+					<!-- 图片 -->
+					<img :src="imgArr[index]" alt="我是一张图片" class="image">
+					<!-- 左箭头 -->
+					<a href="javascript:void(0)" v-show="index!=0" @click="prev" class="left transparent_class">
+						<img src="./Pictures/left.png" class="leftArrow" alt="我是左箭头">
+					</a>
+					<!-- 右箭头 -->
+					<a href="javascript:void(0)" v-show="index<imgArr.length-1" @click="next" class="right transparent_class">
+						<img src="./Pictures/right.png" class="rightArrow" alt="我是右箭头">
+					</a>
+			    </div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					imgArr: [
+						"./Pictures/01.jpg",
+						"./Pictures/02.jpg",
+						"./Pictures/03.jpg",
+						"./Pictures/04.jpg",
+						"./Pictures/05.jpg",
+						"./Pictures/06.jpg",
+						"./Pictures/07.jpg",
+						"./Pictures/08.jpg",
+						"./Pictures/09.jpg",
+						"./Pictures/10.jpg",
+						"./Pictures/11.jpg",
+						"./Pictures/12.jpg",
+						"./Pictures/13.jpg",
+						"./Pictures/14.jpg",
+						"./Pictures/15.jpg",
+						"./Pictures/16.jpg",
+						"./Pictures/17.jpg",
+						"./Pictures/18.jpg",
+						"./Pictures/19.jpg",
+						"./Pictures/20.jpg"
+					],
+					index:0
+				},
+				methods:{
+					prev:function(){
+						this.index--;
+					},
+					next:function(){
+						this.index++;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

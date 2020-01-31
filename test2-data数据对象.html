@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>data数据对象</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			{{ message }}
+			<h2>{{ school.name }} {{ school.mobile }}</h2>
+			<ul>
+				<li>{{ cumpus[0] }}</li>
+				<li>{{ cumpus[1] }}</li>
+				<li>{{ cumpus[2] }}</li>
+			</ul>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:"你好！",
+					school:{
+						name:"华南理工大学",
+						mobile:"0903-2052531"
+					},
+					cumpus:["五山","番禺","中山"]
+				}
+			})
+		</script>
+		
+	</body>
+
+</html>

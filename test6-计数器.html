@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计数器</title>
+	</head>
+	<body>
+		<div>
+			<div id="app">
+				<button type="button" id="bu1" @click="sub">
+					-
+				</button>
+				<span>{{ num }}</span>
+				<button type="button" id="bu2" @click="add">
+					+
+				</button>
+			</div>
+		</div>		
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					num:1
+				},
+				methods:{
+					sub:function(){
+						//console.log("sub");
+						if(this.num>0){
+							this.num-=1;
+						}
+						else{
+							alert("最小啦！别再减啦！");
+						}
+					},
+					add:function(){
+						if(this.num<10){
+							this.num+=1;
+						}
+						//console.log("add");
+						else{
+							alert("最大啦！别再加啦！");
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
